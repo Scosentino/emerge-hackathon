@@ -30,5 +30,10 @@
   <%= @email_message.transcription %>
 </p>
 
+<p>
+  <strong>Video:</strong>
+  <%= image_tag(@email_message.raw_video) %>
+</p>
+
 <%= link_to 'Edit', edit_email_message_path(@email_message) %> |
 <%= link_to 'Back', email_messages_path %>

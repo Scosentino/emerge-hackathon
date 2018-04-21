@@ -42,7 +42,8 @@
   </div>
 
   <div class="field">
-    <a href="#" id="upload_widget_opener">Upload multiple images</a>
+    <%= form.label :raw_video%>
+    <%= form.file_field(:raw_video) %>
 
 
 
@@ -56,7 +57,7 @@
 <% end %>
 <script type="text/javascript">
   document.getElementById("upload_widget_opener").addEventListener("click", function() {
-    cloudinary.openUploadWidget({ cloud_name: 'dflr0ohqs', upload_preset: 'raw_video'},
+    cloudinary.openUploadWidget({ cloud_name: 'dflr0ohqs', upload_preset: 'raw_video', cropping: 'server', folder: "raw_video"},
       function(error, result) { console.log(error, result) });
   }, true);
 </script>
