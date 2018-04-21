@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>recipient email:</strong>
+  <%= @email_message.recipient_email %>
+</p>
+
+<p>
+  <strong>Recipient full name:</strong>
+  <%= @email_message.recipient_full_name %>
+</p>
+
+<p>
+  <strong>Recipient preferred language:</strong>
+  <%= @email_message.recipient_preferred_language %>
+</p>
+
+<p>
+  <strong>Sender full name:</strong>
+  <%= @email_message.sender_full_name %>
+</p>
+
+<p>
+  <strong>Sender email:</strong>
+  <%= @email_message.sender_email %>
+</p>
+
+<p>
+  <strong>Transcription:</strong>
+  <%= @email_message.transcription %>
+</p>
+
+<%= link_to 'Edit', edit_email_message_path(@email_message) %> |
+<%= link_to 'Back', email_messages_path %>
