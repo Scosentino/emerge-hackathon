@@ -41,7 +41,22 @@
     <%= form.text_area :transcription, id: :email_message_transcription %>
   </div>
 
+  <div class="field">
+    <a href="#" id="upload_widget_opener">Upload multiple images</a>
+
+
+
+  </div>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>
+
 <% end %>
+<script type="text/javascript">
+  document.getElementById("upload_widget_opener").addEventListener("click", function() {
+    cloudinary.openUploadWidget({ cloud_name: 'dflr0ohqs', upload_preset: 'raw_video'},
+      function(error, result) { console.log(error, result) });
+  }, true);
+</script>

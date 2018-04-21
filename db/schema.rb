@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180421173959) do
+ActiveRecord::Schema.define(version: 20180421190722) do
 
   create_table "email_messages", force: :cascade do |t|
     t.string "recipient_email"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20180421173959) do
     t.text "transcription"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "raw_video"
   end
 
 end
