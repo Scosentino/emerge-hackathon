@@ -73,7 +73,4 @@ class EmailMessagesController < ApplicationController
       params.require(:email_message).permit(:recipient_email, :recipient_full_name, :recipient_preferred_language, :sender_full_name, :sender_email, :transcription)
     end
 
-    def upload_video(file_name)
-      Cloudinary::Uploader.upload(file_name)
-    end
 end
