@@ -32,7 +32,11 @@
 
 <p>
   <strong>Video:</strong>
-  <%= video_tag(@email_message.raw_video) %>
+  <video width="320" height="240" controls>
+  <source src="<%= @email_message.raw_video.url %>" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
 </p>
 
 <%= link_to 'Edit', edit_email_message_path(@email_message) %> |
