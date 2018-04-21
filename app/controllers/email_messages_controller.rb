@@ -25,7 +25,7 @@ class EmailMessagesController < ApplicationController
   # POST /email_messages.json
   def create
     @email_message = EmailMessage.new(email_message_params)
-    @email_message.upload_video(@email_message.raw_video.url)
+    #@email_message.upload_video(@email_message.raw_video.url)
 
     respond_to do |format|
       if @email_message.save
@@ -70,7 +70,7 @@ class EmailMessagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def email_message_params
-      params.require(:email_message).permit(:recipient_email, :recipient_full_name, :recipient_preferred_language, :sender_full_name, :sender_email, :transcription)
+      params.require(:email_message).permit(:recipient_email, :recipient_full_name, :recipient_preferred_language, :sender_full_name, :sender_email, :transcription, :raw_video)
     end
 
 end

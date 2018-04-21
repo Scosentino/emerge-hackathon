@@ -43,10 +43,8 @@
 
   <div class="field">
     <%= form.label :raw_video%>
-    <%= form.file_field(:raw_video) %>
-
-
-
+    <%= form.hidden_field(:raw_video_cache)%>
+    <%= form.video_field(:raw_video) %>
   </div>
 
 
