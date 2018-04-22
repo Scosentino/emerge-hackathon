@@ -25,10 +25,11 @@ class EmailMessagesController < ApplicationController
   # POST /email_messages.json
   def create
     @email_message = EmailMessage.new(email_message_params)
+    #shit_i_need = @email_message.raw_video.url
     #@email_message.upload_video(@email_message.raw_video.url)
-
     respond_to do |format|
       if @email_message.save
+        #@email_message.upload_video(shit_i_need)
         format.html { redirect_to @email_message, notice: 'Email message was successfully created.' }
         format.json { render :show, status: :created, location: @email_message }
       else
@@ -36,6 +37,7 @@ class EmailMessagesController < ApplicationController
         format.json { render json: @email_message.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /email_messages/1

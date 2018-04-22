@@ -44,7 +44,7 @@
   <div class="field">
     <%= form.label :raw_video%>
     <%= form.hidden_field(:raw_video_cache)%>
-    <%= form.file_field(:raw_video) %>
+    <%= form.cl_upload(:raw_video, use_filename: true) %>
   </div>
 
 

@@ -8,7 +8,8 @@ end
 # Added Gems
 gem 'cloudinary'
 gem 'carrierwave', '> 1.0'
-
+gem 'byebug'
+gem 'better_errors'
 
 
 

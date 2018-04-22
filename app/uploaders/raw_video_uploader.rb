@@ -3,7 +3,9 @@ class RawVideoUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
   include Cloudinary::CarrierWave
-
+  def public_id
+    Cloudinary::PreloadedFile.split_format(original_filename).first
+  end
   # Choose what kind of storage to use for this uploader:
   # storage :file
   # storage :fog
@@ -15,7 +17,7 @@ class RawVideoUploader < CarrierWave::Uploader::Base
   # end
   #
   # def public_id
-  #   return "raw_video/" + model.short_name
+  #   return "raw_video/" +
   # end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
